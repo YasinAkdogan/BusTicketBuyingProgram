@@ -1,0 +1,56 @@
+﻿@model IEnumerable<JourneyInfo>
+@{
+    ViewData["Title"] = "Biletler";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="card text-center">
+            <div class="card-body">
+                <div class="col-4">
+                    <div class="card-header" style="background-color: #2F4EB4; height: 90px">
+                   
+                        <div class="text-center">
+                            <div class="text-left">
+                                <a href="/Home/Index"><i class="fas fa-arrow-left" style="color: #FFFFFF"></i></a>
+                            </div>
+                            <h5 style="color: white; font-size: 16px;">@Model.First().originlocation - @Model.First().destinationlocation</h5>
+                            <h6 style="color: white; font-size: 16px;">@Model.First().journey.departure.ToShortDateString()</h6>
+                        </div>
+                    </div>
+                    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="position-relative mt-2" style="height: 600px; overflow: auto;">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-md-12" style="border: 1px #B4B4B4 solid;margin-top:3px ">
+                                <div class="form-group row">
+                                    <div class="col-md-7">
+                                        <div class="col-md-12">
+                                            <div class="form-group row">
+                                                <div class="col-md-3">
+                                                    <label style="font-size:16px; color: #3640B1">Kalkış</label>
+                                                    <label style="font-size: 18px; color: #192289">@item.journey.departure.ToShortTimeString()</label>
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <div class="text-center">
+                                                        <label><i class="fas fa-arrow-right" style="color: #192289;padding-top:38px;padding-left:11px"></i></label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label style="font-size:16px; color: #3640B1">Varış</label>
+                                                    <label style="font-size: 18px; color: #192289">@item.journey.arrival.ToShortTimeString()</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 text-right" style="margin-top:6px">
+                                        <button class="form-control" style="color: #FFFFFF; background-color: #D23B38; font-size: 14px ">@item.journey.internetprice,00 @item.journey.currency</button>
+                                    </div>
+                                    <label style="color: #083145;font-size:14px;padding-left:8px">@item.journey.origin - @item.journey.destination</label>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+﻿@model IEnumerable<LocationInfo>
+@{
+    ViewData["Title"] = "Bilet Al";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-4">
+                    <div class="card-header" style="background-color: #2F4EB4; height: 50px">
+
+                    </div>
+                    <br />
+                    <div>
+                        <h6 class="card-subtitle">Nereden</h6>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <select class="select2" id="origin">
+                            <option value="0">Seçiniz</option>
+                            @foreach (var item in Model)
+                            {
+                                if (ViewBag.originid != null)
+                                {
+                                    if (ViewBag.originid == item.id)
+                                    {
+                                        <option selected value="@item.id">@item.name</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.id">@item.name</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="@item.id">@item.name</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="text-right">
+                        <a href="javascript:swap()"> <i class="fas fa-sync"></i></a>
+                    </div>
+                    <div>
+                        <h6 class="card-subtitle">Nereye</h6>
+                        <i class="fas fa-map-marker"></i>
+                        <select class="select2" id="destination">
+                            <option value="0">Seçiniz</option>
+                            @foreach (var item in Model)
+                            {
+                                if (ViewBag.destinationid != null)
+                                {
+                                    if (ViewBag.destinationid == item.id)
+                                    {
+                                        <option selected value="@item.id">@item.name</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.id">@item.name</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="@item.id">@item.name</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <br />
+                    <br />
+                    <div>
+                        <h6 class="card-subtitle">Tarih</h6>
+                        <i class="far fa-calendar-alt"></i>
+                        <input id="datePicker" type="date" />
+
+                        <button onclick="todayTicket()" style="background-color:grey">Bugün</button>
+                        <button onclick="tomorrowTicket()" style="background-color:white">Yarın</button>
+                    </div>
+                    <br />
+                    <div>
+                        <button class="form-control" onclick="findTicket()" style="background-color: #2F4EB4; font-size: large; color: white;">Bileti Bul</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    Date.prototype.addDays = function (days) {
+        var date = new Date(this.valueOf());
+        date.setDate(date.getDate() + days);
+        return date;
+    }
+    var now = new Date();
+    function swap() {
+        var OriginId = $('#origin').val();
+        var DestinationId = $('#destination').val();
+        $("#origin").val(DestinationId).trigger('change');
+        $("#destination").val(OriginId).trigger('change');
+    }
+    function todayTicket() {
+        const element = document.getElementById('datePicker');
+        element.valueAsNumber = now;
+    }
+    function tomorrowTicket() {
+        const element = document.getElementById('datePicker');
+        element.valueAsNumber = now.addDays(1);
+    }
+    function findTicket() {
+        var OriginId = $('#origin').val();
+        var DestinationId = $('#destination').val();
+        var TicketDate = $('#datePicker').val();
+        var result = new Date(TicketDate);
+        if (OriginId != 0 && DestinationId != 0 && OriginId != DestinationId && result >= now.addDays(-1)) {
+            location.href = "/Home/JourneyIndex" + "?oid=" + OriginId + "&did=" + DestinationId + "&TDate=" + TicketDate;
+        }
+        else {
+            Swal.fire({ position: 'center', icon: 'warning', title: 'Uyarı', text: "Lütfen seçimlerinizi kontrol ediniz!", showConfirmButton: false, timer: 2500 })
+        }
+    }
+</script>

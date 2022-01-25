@@ -1,0 +1,15 @@
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\bin\Debug\net5.0\Ticket.Business.deps.json
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\bin\Debug\net5.0\Ticket.Business.dll
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\bin\Debug\net5.0\ref\Ticket.Business.dll
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\bin\Debug\net5.0\Ticket.Business.pdb
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\bin\Debug\net5.0\Ticket.Core.dll
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\bin\Debug\net5.0\Ticket.Core.pdb
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\obj\Debug\net5.0\Ticket.Business.csproj.AssemblyReference.cache
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\obj\Debug\net5.0\Ticket.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\obj\Debug\net5.0\Ticket.Business.AssemblyInfoInputs.cache
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\obj\Debug\net5.0\Ticket.Business.AssemblyInfo.cs
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\obj\Debug\net5.0\Ticket.Business.csproj.CoreCompileInputs.cache
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\obj\Debug\net5.0\Ticket.Business.csproj.CopyComplete
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\obj\Debug\net5.0\Ticket.Business.dll
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\obj\Debug\net5.0\ref\Ticket.Business.dll
+C:\Users\Yasin\Desktop\Ticket\Ticket.Business\obj\Debug\net5.0\Ticket.Business.pdb

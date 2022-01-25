@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "IvCn7GQ8hKiHUoA84hbWwcAUcty8IUkooxo86xuraNjxqXX4M1QxtyH3mpm5OrOa9TJAHQOszMVM/hVSKVv2Wg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Yasin\\Desktop\\Ticket\\Ticket.Core\\Ticket.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Yasin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
